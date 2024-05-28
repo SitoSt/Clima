@@ -1,0 +1,12 @@
+.tooltip {
+    display: flex;
+    gap: 5px;
+
+    padding: 10px;
+
+    background-color: rgba(var(--bg-color), 0.4);
+    border-radius: 9px;
+
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
