@@ -6,7 +6,7 @@ export const getPlaceList = (search: string): Promise<[Place] | undefined> => {
 
 
     return new Promise((resolve, reject) => {
-        const res = fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=5&appid=${process.env.NEXT_PUBLIC_API_KEY}`);
+        const res = fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=5&appid=${process.env.NEXT_PUBLIC_API_KEY}`);
 
         res.catch((reason) => {
             console.error(reason)
