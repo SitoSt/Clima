@@ -8,7 +8,10 @@ export default function Home() {
             <PlacesProvider>
                 <CurrentDataProvider>
                     <ForecastDataProvider>
+                        <main className='dark text-foreground bg-background'>
                         <HomeScreen />
+
+                        </main>
                     </ForecastDataProvider>
                 </CurrentDataProvider>
             </PlacesProvider>

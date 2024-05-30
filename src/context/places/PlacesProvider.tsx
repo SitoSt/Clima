@@ -2,15 +2,14 @@ import { useEffect, useReducer } from "react";
 import { PlacesContext } from "./PlacesContext";
 import { placesReducer } from "./placesReducer";
 import { getUserLocation } from "@/helpers";
-import { Coords, PlacesState } from "@/interfaces";
-import { Stick } from "next/font/google";
+import { PlacesState, Coords } from "@/interfaces";
 
 const INITIAL_STATE: PlacesState = {
     isLoading: true,
     userLocation: undefined
 }
 
-interface Props {
+export interface Props {
     children: JSX.Element | JSX.Element[]
 }
 
@@ -25,10 +24,15 @@ export const PlacesProvider = ({ children }: Props) => {
             })
     }, [])
 
+    const setCustomLocation = (coords: Coords | undefined) => {
+        dispatch({ type: 'setCustomLocation', payload: coords })
+    }
+
 
     return (
         <PlacesContext.Provider value={{
             ...state,
+            setCustomLocation,
         }}>
             {children}
         </PlacesContext.Provider>

@@ -1,4 +1,10 @@
 import { createContext } from 'react';
-import { PlacesState } from '@/interfaces';
+import { Coords } from '@/interfaces';
 
-export const PlacesContext = createContext<PlacesState>({} as PlacesState);
+interface PlacesContextProps {
+    isLoading: boolean;
+    userLocation?: Coords,
+    setCustomLocation: (coords: Coords | undefined) => void;
+}
+
+export const PlacesContext = createContext<PlacesContextProps>({} as PlacesContextProps);

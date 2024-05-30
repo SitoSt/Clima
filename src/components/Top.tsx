@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
-import { Input } from "@nextui-org/input";
 import { useContext } from "react";
-import { CurrentDataContext, PlacesContext } from "../context";
+import { CurrentDataContext, PlacesContext, SearchPlacesProvider } from "../context";
 import styles from './css/Top.module.css';
+import { SearchPlaces } from "./PlacesSearch";
 
 
 export const Top = () => {
@@ -71,14 +71,9 @@ export const Top = () => {
             </div>
 
             <MainDataTemp />
-
-            <Input className={styles.location_browser} label={<InputLabel />} placeholder="Madrid, New York, Francia..." variant="underlined" size="sm" radius="md" labelPlacement="outside"
-                classNames={{
-                    input: [
-                        "!text-white",
-                        "placeholder:text-default-700/50 dark:placeholder:text-white/60",
-                    ],
-                }} />
+            <SearchPlacesProvider>
+                <SearchPlaces />
+            </SearchPlacesProvider>
 
 
         </div>
@@ -97,17 +92,11 @@ const MainDataTemp = () => {
                     <h1>{Math.round(currentData.main.temp)}º</h1>
                     <div>
                         <p>Máx: {Math.round(currentData.main.temp_max)}º</p>
-                        <p>Máx: {Math.round(currentData.main.temp_min)}º</p>
+                    <p>Mín: {Math.round(currentData.main.temp_min)}º</p>
                     </div>
                 </>
             }
         </div>
     );
 
-}
-
-const InputLabel = () => {
-    return (
-        <p className={styles.input_label}>Selecciona una ciudad</p>
-    )
 }
