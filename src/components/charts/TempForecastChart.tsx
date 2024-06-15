@@ -20,7 +20,7 @@ export const TempForecastChart = () => {
 
     return (
         <div>
-            <ResponsiveContainer width={600} height={300}>
+            <ResponsiveContainer width={500} height={200}>
                 <AreaChart data={forecastData ? forecastData.list : preLoadData} margin={{ top: 0, right: 17, left: 0, bottom: 10 }}>
                     <defs>
                         <linearGradient id="colorTemp" x1="0" y1="0" x2="0" y2="1">
@@ -32,10 +32,10 @@ export const TempForecastChart = () => {
                     <CartesianGrid stroke="rgb(var(--secondary-color))" opacity={0.4} strokeDasharray="5 5" />
                     <XAxis dataKey="hora" stroke="rgb(var(--primary-color))" tick={<CustomizedXAxisTick />} />
                     <YAxis stroke="rgb(var(--primary-color))" tick={<CustomizedYAxisTick />} tickMargin={9}
-                        tickSize={0} domain={forecastData ? ['dataMin - 2', 'dataMax + 2'] : [10, 22]} padding={{ bottom: 15 }} />
+                        tickSize={0} domain={forecastData ? ['dataMin - 2', 'dataMax + 3'] : [10, 22]} padding={{ bottom: 15 }} />
                     <Tooltip content={<CustomTooltip />} />
                     <Area type="monotone" dataKey="temp" stroke="#ffff" fill="url(#colorTemp)" dot={{ stroke: 'rgba(var(--primary-color), 0.8)', strokeWidth: 2, }} activeDot={{ stroke: 'rgba(var(--primary-color), 1)', fill: 'none', strokeWidth: 2 }}>
-                        <LabelList dataKey="temp" position="top" fill="rgb(var(--tertiary-color))" offset={15} />
+                        <LabelList dataKey="temp" position="top" fill="rgb(var(--tertiary-color))" offset={15} style={{paddingLeft: '10px'}} />
                     </Area>
 
                 </AreaChart>

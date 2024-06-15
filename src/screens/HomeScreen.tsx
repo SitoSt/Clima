@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { TempForecast, Top } from "../components"
+import { FeelsLike, Rain, TempForecast, Top, Wind } from "../components"
 import { useContext, useLayoutEffect } from "react";
 import { PlacesContext, CurrentDataContext, ForecastDataContext } from "@/context";
 import { getCurrentData, getForecastData } from "@/helpers";
@@ -8,8 +8,8 @@ import styles from './HomeScreen.module.css'
 export const HomeScreen = () => {
 
     const { isLoading, userLocation } = useContext(PlacesContext)
-    const { isCurrentReady, currentData, setCurrentData } = useContext(CurrentDataContext)
-    const { isForecastReady, forecastData, setForecastData } = useContext(ForecastDataContext)
+    const { setCurrentData } = useContext(CurrentDataContext)
+    const { setForecastData } = useContext(ForecastDataContext)
 
     useLayoutEffect(() => {
         if (!isLoading && userLocation) {
@@ -27,7 +27,11 @@ export const HomeScreen = () => {
             <Top />
             <div className={styles.data_container}>
                 <TempForecast />
-
+                <div className={styles.boxes_container}>
+                    <FeelsLike />
+                    <Rain />
+                    <Wind />
+                </div>
             </div>
         </div>
     )

@@ -7,4 +7,12 @@
 
 .data_container {
     display: flex;
+    width: 1000px;
+
+    gap: 15px;
+}
+
+.boxes_container {
+    display: flex;
+    flex-wrap: wrap;
 }
