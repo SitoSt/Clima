@@ -22,7 +22,10 @@ export interface CurrentData {
         deg: number
         gust: number
     }
-    rain?: object
+    rain: {
+        una_h: number
+        tres_h: number
+    }
 }
 
 export interface ForecastDataState {

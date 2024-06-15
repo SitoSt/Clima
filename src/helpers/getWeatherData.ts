@@ -19,7 +19,10 @@ export const getCurrentData = (coords: Coords): Promise<CurrentData> => {
                         icon: json.weather[0].icon
                     },
                     wind: json.wind,
-                    rain: json.rain
+                    rain: {
+                        una_h: json.rain? json.rain["1h"] : 0,
+                        tres_h: json.rain? json.rain["3h"] : 0
+                    }
                 }
                 resolve(data)
             })
