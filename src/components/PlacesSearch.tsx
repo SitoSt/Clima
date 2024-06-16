@@ -1,7 +1,7 @@
 
 import { Autocomplete, AutocompleteItem } from "@nextui-org/react";
 import styles from './css/PlacesSearch.module.css';
-import { useState, useContext, useEffect, ReactNode, Key } from "react";
+import { useState, useContext, useEffect } from "react";
 import { SearchPlacesContext, PlacesContext } from "@/context";
 import { getPlaceList } from "@/helpers";
 import { Place } from "@/interfaces";
