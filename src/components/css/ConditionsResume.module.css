@@ -7,7 +7,7 @@
 
     position: relative;
 
-    background-color: rgba(var(--bg-color), 0.6);
+    background-color: rgba(var(--bg-color), 0.4);
 }
 
 .head {
@@ -19,7 +19,6 @@
 
     font-size: 1rem;
     font-weight: 400;
-    color: rgb(214, 214, 214);
     text-align: start;
 }
 
@@ -44,7 +43,7 @@
     height: 175px;
     box-sizing: border-box;
 
-    background-color: rgba(var(--bg-color), 0.6);
+    background-color: rgba(var(--bg-color), 0.4);
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
 
