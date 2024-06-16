@@ -25,9 +25,13 @@ export const Top = () => {
                         </>
                     ) : (
                         <>
-                            <h1>Tiempo en {currentData.name}</h1>
-                            <img src={`https://openweathermap.org/img/wn/${currentData.weather.icon}@2x.png`} alt={currentData.weather.description} />
-                            <p>{currentData.weather.description}</p>
+                            <h1>{currentData.name}</h1>
+                            <MainDataTemp />
+                            <div className={styles.weather}>
+                                <img src={`https://openweathermap.org/img/wn/${currentData.weather.icon}@2x.png`} alt={currentData.weather.description} />
+                                <p>{currentData.weather.description}</p>
+                            </div>
+
 
                         </>
                     )}
@@ -66,15 +70,15 @@ export const Top = () => {
 
     return (
         <div className={styles.main_container}>
+            <div className={styles.autocomplete}>
+                <SearchPlacesProvider>
+                    <SearchPlaces />
+                </SearchPlacesProvider>
+            </div>
+
             <div className={styles.top_info_container}>
                 {topInfo}
             </div>
-
-            <MainDataTemp />
-            <SearchPlacesProvider>
-                <SearchPlaces />
-            </SearchPlacesProvider>
-
 
         </div>
 
@@ -92,7 +96,7 @@ const MainDataTemp = () => {
                     <h1>{Math.round(currentData.main.temp)}º</h1>
                     <div>
                         <p>Máx: {Math.round(currentData.main.temp_max)}º</p>
-                    <p>Mín: {Math.round(currentData.main.temp_min)}º</p>
+                        <p>Mín: {Math.round(currentData.main.temp_min)}º</p>
                     </div>
                 </>
             }
