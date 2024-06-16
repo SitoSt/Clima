@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import styles from '../css/TempForecastChart.module.css'
+import styles from './css/TempForecastChart.module.css'
 import { ForecastDataContext } from "@/context";
 import { AreaChart, Area, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer, LabelList } from "recharts";
 
@@ -19,8 +19,9 @@ export const TempForecastChart = () => {
     ]
 
     return (
-        <div>
-            <ResponsiveContainer width={500} height={200}>
+        <div className={styles.chart_container}>
+            <h1>Temperatura las siguientes 24h</h1>
+            <ResponsiveContainer width={500} height={223}>
                 <AreaChart data={forecastData ? forecastData.list : preLoadData} margin={{ top: 0, right: 17, left: 0, bottom: 10 }}>
                     <defs>
                         <linearGradient id="colorTemp" x1="0" y1="0" x2="0" y2="1">

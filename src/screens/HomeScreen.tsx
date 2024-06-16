@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { FeelsLike, Rain, TempForecast, Top, Wind } from "../components"
+import { FeelsLike, Rain, TempForecastChart, Top, Wind } from "../components"
 import { useContext, useLayoutEffect } from "react";
 import { PlacesContext, CurrentDataContext, ForecastDataContext } from "@/context";
 import { getCurrentData, getForecastData } from "@/helpers";
@@ -25,13 +25,18 @@ export const HomeScreen = () => {
     return (
         <div className={styles.main_container}>
             <Top />
-            <div className={styles.data_container}>
-                <TempForecast />
-                <div className={styles.boxes_container}>
-                    <FeelsLike />
-                    <Rain />
-                    <Wind />
+            <div className={styles.body}>
+                <div className={styles.group}>
+                    <TempForecastChart />
+                    <div className={styles.boxes_container}>
+                        <div className={styles.group}>
+                            <FeelsLike />
+                            <Rain />
+                        </div>
+                        <Wind />
+                    </div>
                 </div>
+
             </div>
         </div>
     )

@@ -33,38 +33,36 @@ export const Rain = () => {
     console.log(currentData?.rain)
 
     return (
-        <div className={styles.main_container}>
-            <div className={styles.box}>
-                <h2 className={styles.head}>Precipitación</h2>
-                <div className={styles.body}>
-                    {!isCurrentReady ?
-                        (
-                            <>
-                                <p>obteniendo datos</p>
-                            </>
-                        ) : (
-                            <>
+        <div className={styles.box}>
+            <h2 className={styles.head}>Precipitación</h2>
+            <div className={styles.body}>
+                {!isCurrentReady ?
+                    (
+                        <>
+                            <p>obteniendo datos</p>
+                        </>
+                    ) : (
+                        <>
 
-                                {!currentData ?
-                                    (
-                                        <>
-                                            <p>No se ha podido acceder a los datos del tiempo en tu ubicación</p>
-                                        </>
-                                    ) : (
-                                        <>
-                                            {lluvia()}
-                                        </>
-                                    )
-                                }
+                            {!currentData ?
+                                (
+                                    <>
+                                        <p>No se ha podido acceder a los datos del tiempo en tu ubicación</p>
+                                    </>
+                                ) : (
+                                    <>
+                                        {lluvia()}
+                                    </>
+                                )
+                            }
 
-                            </>
-                        )
+                        </>
+                    )
 
-                    }
-                </div>
-
-
+                }
             </div>
+
+
         </div>
     )
 }

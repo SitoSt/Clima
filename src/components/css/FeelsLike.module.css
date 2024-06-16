@@ -1,14 +1,8 @@
-.main_container {
-    display: flex;
-    width: fit-content;
-    padding: 10px;
-}
-
 .box {
     display: flex;
     flex-direction: column;
-    width: 180px;
-    height: 130px;
+    width: 160px;
+    height: 140px;
 
     background-color: rgba(var(--bg-color), 0.6);
     backdrop-filter: blur(3px);
@@ -45,6 +39,6 @@
 }
 
 .feels_like {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 500;
 }

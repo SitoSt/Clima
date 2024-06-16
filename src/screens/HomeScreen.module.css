@@ -5,14 +5,22 @@
     gap: 3rem
 }
 
-.data_container {
+.body {
     display: flex;
+    flex-direction: column;
     width: 1000px;
 
-    gap: 15px;
+    gap: 25px;
 }
 
 .boxes_container {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
+    gap: 25px;
+}
+
+.group {
+    display: flex;
+    gap: 25px;
 }
