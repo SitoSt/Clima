@@ -37,13 +37,16 @@ export interface ForecastData {
     list: [{
         hora: number
         temp: number
-        wind: {
-            speed: number
-            deg: number
-            gust: number
+        main: {
+            temp: number
+            humidity: number
         }
-        rain?: object,
-        icon: string
+        clouds: number
+        wind: number
+        weather: {
+            description: string
+            icon: string
+        }
     },
     ]
 }

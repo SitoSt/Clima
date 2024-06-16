@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { FeelsLike, Rain, TempForecastChart, Top, Wind } from "../components"
+import { ConditionsResume, FeelsLike, Rain, TempForecastChart, Top, Wind } from "../components"
 import { useContext, useLayoutEffect } from "react";
 import { PlacesContext, CurrentDataContext, ForecastDataContext } from "@/context";
 import { getCurrentData, getForecastData } from "@/helpers";
@@ -36,6 +36,7 @@ export const HomeScreen = () => {
                         <Wind />
                     </div>
                 </div>
+                <ConditionsResume />
 
             </div>
         </div>

@@ -3,3 +3,4 @@ export { Top } from './Top';
 export { FeelsLike } from './FeelsLike';
 export { Rain } from './Rain';
 export { Wind } from './Wind';
+export { ConditionsResume } from './ConditionsResume';
