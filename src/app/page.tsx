@@ -4,17 +4,17 @@ import { HomeScreen } from '@/screens';
 
 export default function Home() {
     return (
-        <main>
+        <div>
             <PlacesProvider>
                 <CurrentDataProvider>
                     <ForecastDataProvider>
                         <main className='dark text-foreground bg-background'>
-                        <HomeScreen />
+                            <HomeScreen />
 
                         </main>
                     </ForecastDataProvider>
                 </CurrentDataProvider>
             </PlacesProvider>
-        </main>
+        </div>
     );
 }

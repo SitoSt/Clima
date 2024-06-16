@@ -78,8 +78,11 @@ export const SearchPlaces = () => {
             >
 
 
-                {(place => <AutocompleteItem key={place.id} description={`${place.country}, ${place.state}`}
-                >{place.name}</AutocompleteItem>)}
+                {(place =>
+                    <AutocompleteItem key={place.id} description={`${place.country}, ${place.state}`}>
+                        {place.name}
+                    </AutocompleteItem>
+                )}
             </ Autocomplete >
         </div >
     )
